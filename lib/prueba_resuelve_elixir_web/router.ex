@@ -7,5 +7,7 @@ defmodule PruebaResuelveElixirWeb.Router do
 
   scope "/api", PruebaResuelveElixirWeb do
     pipe_through :api
+    resources "/equipos", EquipoController, except: [:new, :edit]
+    resources "/niveles", NivelController, except: [:new, :edit]
   end
 end

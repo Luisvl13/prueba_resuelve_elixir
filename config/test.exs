@@ -7,8 +7,9 @@ import Config
 # Run `mix help test` for more information.
 config :prueba_resuelve_elixir, PruebaResuelveElixir.Repo,
   username: "root",
-  password: "",
+  password: "root",
   hostname: "localhost",
+  port: 8889,
   database: "prueba_resuelve_elixir_test#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10
