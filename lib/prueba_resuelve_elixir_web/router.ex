@@ -9,6 +9,8 @@ defmodule PruebaResuelveElixirWeb.Router do
     pipe_through :api
     resources "/equipos", EquipoController, except: [:new, :edit]
     resources "/niveles", NivelController, except: [:new, :edit]
-    post "/sueldos", SueldoController, :cal_sueldo_completo
+
+    post "/sueldos-jugadores", SueldoController, :sueldo_completo_jugadores
+    post "/sueldos-equipos", SueldoController, :sueldo_completo_equipos
   end
 end

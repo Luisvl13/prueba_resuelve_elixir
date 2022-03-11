@@ -3,7 +3,20 @@ defmodule PruebaResuelveElixirWeb.SueldoController do
 
   import PruebaResuelveElixir
 
-  def cal_sueldo_completo(conn, sueldo_params) do
+  def sueldo_completo_equipos(conn, sueldo_params) do
+    map = sueldo_params["equipos"]
+
+    equipos =
+      Enum.map(map, fn equipo ->
+        equipo_id = equipo["id"]
+
+        sueldo_completo(equipo["jugadores"], equipo_id)
+      end)
+
+    render(conn, "equipos.json", equipos: equipos)
+  end
+
+  def sueldo_completo_jugadores(conn, sueldo_params) do
     map = sueldo_params["jugadores"]
 
     jugadores = sueldo_completo(map, 1)
