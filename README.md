@@ -35,7 +35,7 @@ Para las pruebas
 ### Estructura JSON
 ---
 #### Solo jugadores
-`/api/sueldos-equipos`
+`/api/sueldos-jugadores`
 ```json
 {
    "jugadores" : [  
@@ -82,7 +82,7 @@ Para las pruebas
 ```
 
 #### Equipos
-`/api/sueldos-jugadores`
+`/api/sueldos-equipos`
 ```json
 {
     "equipos": [
