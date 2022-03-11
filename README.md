@@ -23,14 +23,14 @@ Si quieres saber más de la [Prueba Ingeniería Resuelve](https://github.com/res
 2. Ejecute imagen `docker-compose up -d`
 3. Ejecuta migraciones e insertar datos precargados`docker-compose exec app mix ecto.reset `
 4. (Opcional) [Postman](https://www.getpostman.com/) que permite el envío de peticiones HTTP REST sin necesidad de desarrollar un cliente. Probar con la ruta:
-    * `http://127.0.0.1:8000` o su equivalente `http://localhost:8000`
+    * `http://127.0.0.1:4000` o su equivalente `http://localhost:4000`
 
 ### Pruebas
 ---
 Para ejecutar los test del proyecto puede correr:
 
 Para las pruebas 
-* `mix test test/prueba_resuelve_elixir/prueba_resuelve_elixir_test.exs`
+* `docker-compose exec app mix test test/prueba_resuelve_elixir/prueba_resuelve_elixir_test.exs`
 
 ### Estructura JSON
 ---
