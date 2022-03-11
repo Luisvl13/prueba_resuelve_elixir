@@ -8,8 +8,7 @@ import Config
 config :prueba_resuelve_elixir, PruebaResuelveElixir.Repo,
   username: "root",
   password: "root",
-  hostname: "localhost",
-  port: 8889,
+  hostname: "db",
   database: "prueba_resuelve_elixir_dev#{System.get_env("MIX_TEST_PARTITION")}",
   pool: Ecto.Adapters.SQL.Sandbox,
   pool_size: 10

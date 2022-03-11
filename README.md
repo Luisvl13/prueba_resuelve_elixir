@@ -19,7 +19,11 @@ Si quieres saber más de la [Prueba Ingeniería Resuelve](https://github.com/res
 * [Docker](https://www.docker.com/) plataforma de software que le permite crear, probar e implementar aplicaciones rápidamente.
 
 #### Instalación
-
+1. Cree la imagen con `docker-compose build app`
+2. Ejecute imagen `docker-compose up -d`
+3. Ejecuta migraciones e insertar datos precargados`docker-compose exec app mix ecto.reset `
+4. (Opcional) [Postman](https://www.getpostman.com/) que permite el envío de peticiones HTTP REST sin necesidad de desarrollar un cliente. Probar con la ruta:
+    * `http://127.0.0.1:8000` o su equivalente `http://localhost:8000`
 
 ### Pruebas
 ---
