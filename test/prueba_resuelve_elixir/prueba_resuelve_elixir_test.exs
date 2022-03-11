@@ -58,6 +58,6 @@ defmodule PruebaResuelveElixir.PruebaResuelveElixirTest do
   test "test_sueldo_completo" do
     equipo_id = 1
     jugador_luis = Enum.at(sueldo_completo(@request, equipo_id), 3)
-    assert jugador_luis.sueldo_completo == 59550.0
+    assert jugador_luis.sueldo_completo == "59550.00"
   end
 end

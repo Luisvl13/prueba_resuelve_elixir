@@ -14,18 +14,26 @@ defmodule PruebaResuelveElixir do
         jugador["goles"] / obtener_goles_nivel(jugador["nivel"], equipo_id)
 
       bono_logrado =
-        bono50 * alcance_bono_individual +
-          bono50 * porcentaje_alcance_bono_equipo(request, equipo_id)
+        bono50 *
+          if(alcance_bono_individual >= 1,
+            do: 1,
+            else: alcance_bono_individual
+          ) +
+          bono50 *
+            if(porcentaje_alcance_bono_equipo(request, equipo_id) >= 1,
+              do: 1,
+              else: porcentaje_alcance_bono_equipo(request, equipo_id)
+            )
 
-      IO.inspect(%Jugador{
+      %Jugador{
         nombre: jugador["nombre"],
         nivel: jugador["nivel"],
         goles: jugador["goles"],
         sueldo: jugador["sueldo"],
         bono: jugador["bono"],
-        sueldo_completo: Float.ceil(jugador["sueldo"] + bono_logrado, 2),
+        sueldo_completo: :erlang.float_to_binary(jugador["sueldo"] + bono_logrado, decimals: 2),
         equipo: jugador["equipo"]
-      })
+      }
     end)
   end
 
